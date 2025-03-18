@@ -24,3 +24,15 @@ model Technology {
   @@map("tb_technologies")
 }
 
+model Project {
+  id Int @id @default(autoincrement())
+  name String
+  description String
+  images String[]
+  level Int
+  type String
+  is_priority Boolean @default(false)
+  repository String
+
+  @@map("tb_projects")
+}
