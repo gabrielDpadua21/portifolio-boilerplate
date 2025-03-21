@@ -20,6 +20,7 @@ model Technology {
   description String
   image String
   is_priority Boolean @default(false)
+  projects Project[]
   
   @@map("tb_technologies")
 }
@@ -33,6 +34,7 @@ model Project {
   type String
   is_priority Boolean @default(false)
   repository String
+  techs Technology[]
 
   @@map("tb_projects")
 }
