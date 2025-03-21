@@ -1,12 +1,12 @@
-import { Controller, Get } from '@nestjs/common';
-import { AppService } from './app.service';
+import { Controller, Get } from "@nestjs/common";
+import { Pong } from "@core";
 
 @Controller()
 export class AppController {
-  constructor(private readonly appService: AppService) {}
+	constructor() {}
 
-  @Get()
-  getHello(): String {
-    return this.appService.getHello();
-  }
+	@Get("/ping")
+	ping(): String {
+		return Pong.pingPong();
+	}
 }
