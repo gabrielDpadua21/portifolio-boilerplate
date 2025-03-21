@@ -1,3 +1,3 @@
-const PI = 3.14;
-
-export { PI };
+export * from "./projects";
+export * from "./share";
+export * from "./techs";

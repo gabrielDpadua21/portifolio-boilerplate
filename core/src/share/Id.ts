@@ -10,5 +10,3 @@ export default class Id {
 		return Math.random().toString(36).substring(2, 9);
 	}
 }
-
-console.log(Id.generate());

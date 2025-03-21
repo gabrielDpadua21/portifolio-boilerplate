@@ -1,10 +1,9 @@
 import { Injectable } from '@nestjs/common';
-
-import { PI } from '@core';
+import { Id } from '@core';
 
 @Injectable()
 export class AppService {
   getHello(): String {
-    return 'Hello PI?: ' + PI;
+    return 'Hello ID: ' + Id.generate();
   }
 }
