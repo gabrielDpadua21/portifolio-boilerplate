@@ -1,4 +1,8 @@
-import { Module } from '@nestjs/common';
+import { Module } from "@nestjs/common";
+import { PrismaPrivider } from "./prisma.privider";
 
-@Module({})
+@Module({
+	providers: [PrismaPrivider],
+	exports: [PrismaPrivider],
+})
 export class DatabaseModule {}
