@@ -1,5 +1,6 @@
-import { Controller, Get } from "@nestjs/common";
+import { Controller, Get, Param } from "@nestjs/common";
 import { ProjectsProvider } from "./projects.provider";
+import { Project } from "@core";
 
 @Controller("projects")
 export class ProjectsController {
@@ -16,7 +17,12 @@ export class ProjectsController {
 	 *         description: A list of projects
 	 */
 	@Get("/")
-	async getAllProjects() {
+	async getAllProjects(): Promise<Project[]> {
 		return this.projectsProvider.getAllProjects();
+	}
+
+	@Get("/:id")
+	async getProjectWithTechs(@Param("id") id: string): Promise<Project | null> {
+		return this.projectsProvider.getProjectWithTechs(Number(id));
 	}
 }
