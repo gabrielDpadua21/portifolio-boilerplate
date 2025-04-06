@@ -20,4 +20,9 @@ export class TechsController {
 	async getAllTechs(): Promise<Technology[]> {
 		return this.techsProvider.getAllTechs();
 	}
+
+	@Get("/priority")
+	async getTechsWithPriority(): Promise<Technology[]> {
+		return this.techsProvider.getTechPriority();
+	}
 }
